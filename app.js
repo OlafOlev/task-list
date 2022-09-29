@@ -1,7 +1,13 @@
 const form = document.querySelector('form')
 const taskInput = document.querySelector('#task')
+const taskList = document.querySelector('ul')
+
+
 // const myTask = document.querySelector('#task-title ul li')
+taskList.addEventListener('click', deleteTask)
 form.addEventListener('submit', addTask)
+
+
 
 function addTask(e){
     //create list item
@@ -18,4 +24,11 @@ function addTask(e){
     ul.appendChild(li)
     taskInput.value = ''
     e.preventDefault()
+}
+function deleteTask(e){
+    if(e.target.textContent == 'X'){
+        if(confirm('Aru you sure to delete this task')){
+            e.target.parentElement.remove()
+        }
+    }
 }
