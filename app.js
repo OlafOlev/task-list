@@ -103,7 +103,7 @@ function findTask(key) {
     }
     i = 0
     tasks.forEach((task) =>{
-        if (task.includes(keyword)) {
+        if (task.toLowerCase().includes(keyword.toLowerCase())) {
             li[i].style.display = ""
         } else {
             li[i].style.display = "none"
