@@ -1,5 +1,6 @@
 const form  = document.querySelector('form')
 const taskInput = document.querySelector('#task')
+const taskFind = document.querySelector('#keyword')
 const taskList = document.querySelector('ul')
 const delAllTasks = document.querySelector('#del-tasks')
 
@@ -88,5 +89,25 @@ function getTasks(){
         // add to list
         const ul = document.querySelector('ul')
         ul.appendChild(li)
+    })
+}
+function findTask(key) {
+    let keyword = taskFind.value
+    let tasks
+    ul = document.getElementById("ul")
+    li = ul.getElementsByTagName('li')
+    if(localStorage.getItem('tasks') === null){
+        tasks = []
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+    }
+    i = 0
+    tasks.forEach((task) =>{
+        if (task.includes(keyword)) {
+            li[i].style.display = ""
+        } else {
+            li[i].style.display = "none"
+        }
+        i++
     })
 }

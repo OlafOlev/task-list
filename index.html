@@ -33,9 +33,14 @@
                     </div>
                 </div>
                 <div class="card-action">
+                    <div class="col s12">
+                        <input type="text" id="keyword" onkeyup="findTask()">
+                        <label for="keyword">Find Task</label>
+                        <div class="row s2"></div>
+                    </div>
                     <span class="card-title" id="task-title">My Tasks</span>
                         <a type="button" href="#" id="del-tasks">Delete all task</a>
-                    <ul class="collection">
+                    <ul class="collection" id="ul">
                     </ul>
                 </div>
             </div>
